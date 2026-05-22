@@ -94,6 +94,7 @@ export default function AdminClient({ beans: initialBeans }: { beans: Bean[] }) 
         <a href="/" className="hover:text-amber-200 transition-colors">← サイトトップ</a>
         <a href="/beans" className="hover:text-amber-200 transition-colors">豆一覧</a>
         <a href="/admin/beans" className="hover:text-amber-200 transition-colors">コメント管理</a>
+        <a href="/admin/board" className="hover:text-amber-200 transition-colors">掲示板管理</a>
       </nav>
 
       <main className="max-w-5xl mx-auto px-8 py-10">

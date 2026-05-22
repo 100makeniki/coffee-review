@@ -115,6 +115,21 @@ export async function deleteBeanAction(
   return { error: null, success: true }
 }
 
+export async function deleteBoardPostAction(
+  prevState: BeanFormState,
+  formData: FormData
+): Promise<BeanFormState> {
+  await checkAuth()
+
+  const id = formData.get('id') as string
+  const { error } = await supabase.from('board_posts').delete().eq('id', id)
+  if (error) return { error: error.message, success: false }
+
+  revalidatePath('/admin/board')
+  revalidatePath('/board')
+  return { error: null, success: true }
+}
+
 export async function deleteCommentAction(
   prevState: BeanFormState,
   formData: FormData
